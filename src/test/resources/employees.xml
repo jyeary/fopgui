@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+    <companyname>Widgets Inc.</companyname>
+    <employee>
+        <id>101</id>
+        <name>George</name>
+        <designation>Manager</designation>
+    </employee>
+    <employee>
+        <id>102</id>
+        <name>Samantha</name>
+        <designation>Executive</designation>
+    </employee>
+    <employee>
+        <id>103</id>
+        <name>John</name>
+        <designation>Executive</designation>
+    </employee>
+    <employee>
+        <id>104</id>
+        <name>Suzy</name>
+        <designation>Production</designation>
+    </employee>
+    <employee>
+        <id>105</id>
+        <name>Lisa</name>
+        <designation>Production</designation>
+    </employee>
+    <employee>
+        <id>106</id>
+        <name>Simon</name>
+        <designation>Production</designation>
+    </employee>
+</employees>
