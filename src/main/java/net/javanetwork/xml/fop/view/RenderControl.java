@@ -3,6 +3,22 @@
  *
  * Created on May 7, 2006, 6:25 PM
  */
+ /*
+ * Copyright 2006 <a href="mailto:jyeary@javanetwork.net">John Yeary</a>. 
+ * Copyright 2018 <a href="mailto:jyeary@bluelotussoftware.com">John Yeary</a>.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package net.javanetwork.xml.fop.view;
 
 import java.io.File;
@@ -36,11 +52,9 @@ public class RenderControl extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField_fo = new javax.swing.JTextField();
         jTextField_xslt = new javax.swing.JTextField();
         jTextField_xml = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox();
@@ -50,8 +64,6 @@ public class RenderControl extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Render Control");
-
-        jLabel1.setText("FO File:");
 
         jLabel2.setText("XSLT File:");
 
@@ -89,13 +101,11 @@ public class RenderControl extends javax.swing.JFrame {
                             .add(layout.createSequentialGroup()
                                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(jLabel3)
-                                    .add(jLabel2)
-                                    .add(jLabel1))
+                                    .add(jLabel2))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(jTextField_xml, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-                                    .add(jTextField_xslt, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
-                                    .add(jTextField_fo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)))
+                                    .add(jTextField_xslt, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)))
                             .add(layout.createSequentialGroup()
                                 .add(jLabel4)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -114,10 +124,6 @@ public class RenderControl extends javax.swing.JFrame {
             .add(layout.createSequentialGroup()
                 .addContainerGap()
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField_fo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel1))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jTextField_xslt, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jLabel2))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
@@ -128,7 +134,7 @@ public class RenderControl extends javax.swing.JFrame {
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jLabel4)
                     .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 121, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 153, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jButtonRender)
                     .add(jButtonCancel)
@@ -143,15 +149,8 @@ public class RenderControl extends javax.swing.JFrame {
 
         String option = (String) jComboBox1.getSelectedItem();
         System.out.println(option);
-        String foName = jTextField_fo.getText();
         String xslName = jTextField_xml.getText();
         String xmlName = jTextField_xml.getText();
-
-        if (foName == null || foName.isEmpty()) {
-            System.out.println("FO Name was empty");
-        } else {
-            ctl.setFoFile(new File(foName));
-        }
 
         if (xslName == null || xslName.isEmpty() || xmlName == null || xmlName.isEmpty()) {
             System.out.println("The XSL and XML file names must be provided.");
@@ -166,7 +165,7 @@ public class RenderControl extends javax.swing.JFrame {
                     worker = new SwingWorker() {
                         @Override
                         protected Object doInBackground() throws Exception {
-                            ctl.viewFO();
+                            ctl.preview();
                             return null;
                         }
                     };
@@ -219,11 +218,9 @@ public class RenderControl extends javax.swing.JFrame {
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonRender;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField_fo;
     private javax.swing.JTextField jTextField_xml;
     private javax.swing.JTextField jTextField_xslt;
     // End of variables declaration//GEN-END:variables
